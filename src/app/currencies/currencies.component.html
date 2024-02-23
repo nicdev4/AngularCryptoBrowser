@@ -1,0 +1,25 @@
+<h2>Currencies list</h2>
+<p [hidden]="!loading">Loading...</p>
+<div class="content" [hidden]="loading">
+  <form action="/">
+    <input type="text" name="search_query" (input)="search($event)" placeholder="Enter currency name here...">
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Symbol</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      @for (c of getCurrencies(); track c){
+      <tr>
+          <td>{{ c.name }}</td>
+          <td>{{ c.symbol }}</td>
+          <td><button routerLink="/currency/{{c.id}}">Open {{c.name}}</button></td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

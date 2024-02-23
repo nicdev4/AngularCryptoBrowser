@@ -1,0 +1,26 @@
+body{
+  font-family: "Open Sans", sans-serif;
+}
+*{
+  font-family: "Open Sans", sans-serif;
+}
+ul{
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+ul li:first-child{
+  margin-left: 0;
+}
+ul li{
+  display: flex;
+  width: max-content;
+  margin-left: 24px;
+}
+ul li a{
+  background: rgba(0, 0, 0, 0.14);
+  text-decoration: none;
+  font-size: 16px;
+  padding: 0.6em 1.4em;
+  color: black;
+}
