@@ -1,5 +1,5 @@
 <h2>Currencies list</h2>
-<p [hidden]="!loading">Loading...</p>
+<app-loading [hidden]="!loading"></app-loading>
 <div class="content" [hidden]="loading">
   <form action="/">
     <input type="text" name="search_query" (input)="search($event)" placeholder="Enter currency name here...">

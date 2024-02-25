@@ -1,4 +1,5 @@
-<div class="content">
+<app-loading [hidden]="!loading"></app-loading>
+<div class="content" [hidden]="loading">
   <div class="currency">
     <div class="currency__head">
       <img src="{{coin?.image_url}}"> <span>{{coin?.name}}</span>

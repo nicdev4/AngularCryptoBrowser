@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {Router, RouterLink, RouterOutlet} from "@angular/router";
 import {FormBuilder, FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {LoadingComponent} from "../loading/loading.component";
 
 @Component({
   selector: 'app-currencies',
@@ -11,7 +12,8 @@ import {FormBuilder, FormControl, FormsModule, ReactiveFormsModule} from "@angul
     RouterOutlet,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LoadingComponent
   ],
   templateUrl: './currencies.component.html',
   styleUrl: './currencies.component.css'

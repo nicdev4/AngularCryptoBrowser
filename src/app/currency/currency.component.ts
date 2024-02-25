@@ -2,17 +2,19 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {LoadingComponent} from "../loading/loading.component";
 
 @Component({
   selector: 'app-currency',
   standalone: true,
-  imports: [HttpClientModule],
+    imports: [HttpClientModule, LoadingComponent],
   templateUrl: './currency.component.html',
   styleUrl: './currency.component.css'
 })
 export class CurrencyComponent implements OnInit{
   name: any | undefined;
   coin: Coin|undefined;
+  loading = true;
   constructor(private activatedRoute:ActivatedRoute, private http:HttpClient) {
   }
   ngOnInit() {
@@ -26,6 +28,7 @@ export class CurrencyComponent implements OnInit{
         this.coin.price = data.market_data.current_price.usd;
         this.coin.description = data.description.en;
         this.coin.ath_percent_change = data.market_data.ath_change_percentage.usd.toString();
+        this.loading = false;
       }});
   }
 
