@@ -1,10 +1,12 @@
 <app-loading [hidden]="!loading"></app-loading>
 <div class="content" [hidden]="loading">
-  <div class="currency">
+  <div class="currency" [hidden]="error">
     <div class="currency__head">
       <img src="{{coin?.image_url}}"> <span>{{coin?.name}}</span>
     </div>
     <span class="currency__price">${{coin?.price}} <span class="currency__price-percent-change">{{ coin?.ath_percent_change }}%</span></span>
     <span class="currency__text">{{coin?.description}}</span>
+      <img src="{{ coin?.sparkline_url }}" class="currency__sparkline">
   </div>
+    <app-notfound [hidden]="!error"></app-notfound>
 </div>
